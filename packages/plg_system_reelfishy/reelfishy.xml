@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="system" method="upgrade">
+	<name>plg_system_reelfishy</name>
+	<author>Chaotic Fish Design</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 Chaotic Fish Design</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>weirdideas@chaoticfishdesign.com</authorEmail>
+	<authorUrl>https://chaoticfishdesign.com</authorUrl>
+	<version>1.2.0</version>
+	<description>PLG_SYSTEM_REELFISHY_XML_DESCRIPTION</description>
+	<namespace path="src">ChaoticFishDesign\Plugin\System\ReelFishy</namespace>
+	<files>
+		<folder plugin="reelfishy">services</folder>
+		<folder>src</folder>
+	</files>
+	<media folder="media" destination="plg_system_reelfishy">
+		<folder>js</folder>
+	</media>
+	<languages>
+		<language tag="en-GB">language/en-GB/plg_system_reelfishy.ini</language>
+		<language tag="en-GB">language/en-GB/plg_system_reelfishy.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="sparkles"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_SPARKLES_LABEL"
+					description="PLG_SYSTEM_REELFISHY_SPARKLES_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="glow"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_GLOW_LABEL"
+					description="PLG_SYSTEM_REELFISHY_GLOW_DESC"
+					showon="sparkles:1"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="confetti"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_CONFETTI_LABEL"
+					description="PLG_SYSTEM_REELFISHY_CONFETTI_DESC"
+					showon="sparkles:1"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="theater"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_THEATER_LABEL"
+					description="PLG_SYSTEM_REELFISHY_THEATER_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="previews"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_PREVIEWS_LABEL"
+					description="PLG_SYSTEM_REELFISHY_PREVIEWS_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="hover_preview"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_HOVER_PREVIEW_LABEL"
+					description="PLG_SYSTEM_REELFISHY_HOVER_PREVIEW_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="frame_tools"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_FRAME_TOOLS_LABEL"
+					description="PLG_SYSTEM_REELFISHY_FRAME_TOOLS_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="icons"
+					type="list"
+					default="fishy"
+					label="PLG_SYSTEM_REELFISHY_ICONS_LABEL"
+					description="PLG_SYSTEM_REELFISHY_ICONS_DESC"
+					validate="options"
+					>
+					<option value="fishy">PLG_SYSTEM_REELFISHY_ICONS_FISHY</option>
+					<option value="classic">PLG_SYSTEM_REELFISHY_ICONS_CLASSIC</option>
+					<option value="minimal">PLG_SYSTEM_REELFISHY_ICONS_MINIMAL</option>
+				</field>
+				<field
+					name="loader"
+					type="list"
+					default="auto"
+					label="PLG_SYSTEM_REELFISHY_LOADER_LABEL"
+					description="PLG_SYSTEM_REELFISHY_LOADER_DESC"
+					validate="options"
+					>
+					<option value="auto">PLG_SYSTEM_REELFISHY_LOADER_AUTO</option>
+					<option value="fish">PLG_SYSTEM_REELFISHY_LOADER_FISH</option>
+					<option value="ring">PLG_SYSTEM_REELFISHY_LOADER_RING</option>
+				</field>
+				<field
+					name="play_image"
+					type="media"
+					types="images"
+					preview="tooltip"
+					default=""
+					label="PLG_SYSTEM_REELFISHY_PLAY_IMAGE_LABEL"
+					description="PLG_SYSTEM_REELFISHY_PLAY_IMAGE_DESC"
+					filter="string"
+				/>
+				<field
+					name="loader_image"
+					type="media"
+					types="images"
+					preview="tooltip"
+					default=""
+					label="PLG_SYSTEM_REELFISHY_LOADER_IMAGE_LABEL"
+					description="PLG_SYSTEM_REELFISHY_LOADER_IMAGE_DESC"
+					filter="string"
+				/>
+				<field
+					name="loop"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_REELFISHY_LOOP_LABEL"
+					description="PLG_SYSTEM_REELFISHY_LOOP_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="lazy"
+					type="list"
+					default="off"
+					label="PLG_SYSTEM_REELFISHY_LAZY_LABEL"
+					description="PLG_SYSTEM_REELFISHY_LAZY_DESC"
+					validate="options"
+					>
+					<option value="off">PLG_SYSTEM_REELFISHY_LAZY_OFF</option>
+					<option value="click">PLG_SYSTEM_REELFISHY_LAZY_CLICK</option>
+				</field>
+				<field
+					name="resume"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_RESUME_LABEL"
+					description="PLG_SYSTEM_REELFISHY_RESUME_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="captions_on"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_REELFISHY_CAPTIONS_ON_LABEL"
+					description="PLG_SYSTEM_REELFISHY_CAPTIONS_ON_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="speeds"
+					type="text"
+					default="0.5,0.75,1,1.25,1.5,2"
+					label="PLG_SYSTEM_REELFISHY_SPEEDS_LABEL"
+					description="PLG_SYSTEM_REELFISHY_SPEEDS_DESC"
+					filter="string"
+				/>
+			</fieldset>
+			<fieldset name="transcript" label="PLG_SYSTEM_REELFISHY_FIELDSET_TRANSCRIPT">
+				<field
+					name="transcript_open"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_REELFISHY_TRANSCRIPT_OPEN_LABEL"
+					description="PLG_SYSTEM_REELFISHY_TRANSCRIPT_OPEN_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="search_offset"
+					type="number"
+					default="3"
+					min="0"
+					max="15"
+					step="0.5"
+					label="PLG_SYSTEM_REELFISHY_SEARCH_OFFSET_LABEL"
+					description="PLG_SYSTEM_REELFISHY_SEARCH_OFFSET_DESC"
+					filter="float"
+				/>
+			</fieldset>
+			<fieldset name="captions" label="PLG_SYSTEM_REELFISHY_FIELDSET_CAPTIONS">
+				<field
+					name="caption_size"
+					type="list"
+					default="m"
+					label="PLG_SYSTEM_REELFISHY_CAPTION_SIZE_LABEL"
+					description="PLG_SYSTEM_REELFISHY_CAPTION_SIZE_DESC"
+					>
+					<option value="s">PLG_SYSTEM_REELFISHY_CAPTION_SIZE_S</option>
+					<option value="m">PLG_SYSTEM_REELFISHY_CAPTION_SIZE_M</option>
+					<option value="l">PLG_SYSTEM_REELFISHY_CAPTION_SIZE_L</option>
+					<option value="xl">PLG_SYSTEM_REELFISHY_CAPTION_SIZE_XL</option>
+				</field>
+				<field
+					name="caption_bg"
+					type="list"
+					default="solid"
+					label="PLG_SYSTEM_REELFISHY_CAPTION_BG_LABEL"
+					description="PLG_SYSTEM_REELFISHY_CAPTION_BG_DESC"
+					>
+					<option value="solid">PLG_SYSTEM_REELFISHY_CAPTION_BG_SOLID</option>
+					<option value="clear">PLG_SYSTEM_REELFISHY_CAPTION_BG_CLEAR</option>
+					<option value="none">PLG_SYSTEM_REELFISHY_CAPTION_BG_NONE</option>
+				</field>
+				<field
+					name="descriptions_on"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_REELFISHY_DESCRIPTIONS_ON_LABEL"
+					description="PLG_SYSTEM_REELFISHY_DESCRIPTIONS_ON_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="endscreen" label="PLG_SYSTEM_REELFISHY_FIELDSET_ENDSCREEN">
+				<field name="end_note" type="note" description="PLG_SYSTEM_REELFISHY_END_NOTE" />
+				<field name="end_message" type="text" default="" maxlength="200" filter="string" label="PLG_SYSTEM_REELFISHY_END_MESSAGE_LABEL" hint="PLG_SYSTEM_REELFISHY_END_MESSAGE_HINT" />
+				<field name="end_button_1" type="text" default="" maxlength="60" filter="string" label="PLG_SYSTEM_REELFISHY_END_BUTTON_1_LABEL" hint="PLG_SYSTEM_REELFISHY_END_BUTTON_1_HINT" />
+				<field name="end_url_1" type="text" default="" filter="string" label="PLG_SYSTEM_REELFISHY_END_URL_1_LABEL" hint="PLG_SYSTEM_REELFISHY_END_URL_HINT" />
+				<field name="end_button_2" type="text" default="" maxlength="60" filter="string" label="PLG_SYSTEM_REELFISHY_END_BUTTON_2_LABEL" />
+				<field name="end_url_2" type="text" default="" filter="string" label="PLG_SYSTEM_REELFISHY_END_URL_2_LABEL" hint="PLG_SYSTEM_REELFISHY_END_URL_HINT" />
+				<field name="end_lead" type="number" default="2" min="0" max="15" step="0.5" filter="float" label="PLG_SYSTEM_REELFISHY_END_LEAD_LABEL" description="PLG_SYSTEM_REELFISHY_END_LEAD_DESC" />
+			</fieldset>
+			<fieldset name="floating" label="PLG_SYSTEM_REELFISHY_FIELDSET_FLOATING">
+				<field
+					name="mini"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_MINI_LABEL"
+					description="PLG_SYSTEM_REELFISHY_MINI_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="dock_position"
+					type="list"
+					default="right"
+					label="PLG_SYSTEM_REELFISHY_DOCK_LABEL"
+					validate="options"
+					>
+					<option value="right">PLG_SYSTEM_REELFISHY_DOCK_RIGHT</option>
+					<option value="left">PLG_SYSTEM_REELFISHY_DOCK_LEFT</option>
+				</field>
+				<field
+					name="carry"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_CARRY_LABEL"
+					description="PLG_SYSTEM_REELFISHY_CARRY_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="carry_minutes"
+					type="number"
+					default="30"
+					min="1"
+					max="1440"
+					label="PLG_SYSTEM_REELFISHY_CARRY_MINUTES_LABEL"
+					description="PLG_SYSTEM_REELFISHY_CARRY_MINUTES_DESC"
+					filter="integer"
+					showon="carry:1"
+				/>
+				<field
+					name="pip"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_PIP_LABEL"
+					description="PLG_SYSTEM_REELFISHY_PIP_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="embeds" label="PLG_SYSTEM_REELFISHY_FIELDSET_EMBEDS">
+				<field
+					name="allow_youtube"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_ALLOW_YOUTUBE_LABEL"
+					description="PLG_SYSTEM_REELFISHY_ALLOW_YOUTUBE_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="allow_vimeo"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_ALLOW_VIMEO_LABEL"
+					description="PLG_SYSTEM_REELFISHY_ALLOW_VIMEO_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="allow_tiktok"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_ALLOW_TIKTOK_LABEL"
+					description="PLG_SYSTEM_REELFISHY_ALLOW_TIKTOK_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="privacy_screen"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_PRIVACY_LABEL"
+					description="PLG_SYSTEM_REELFISHY_PRIVACY_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="privacy_remember"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_PRIVACY_REMEMBER_LABEL"
+					description="PLG_SYSTEM_REELFISHY_PRIVACY_REMEMBER_DESC"
+					showon="privacy_screen:1"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="privacy_thumbs"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_REELFISHY_PRIVACY_THUMBS_LABEL"
+					description="PLG_SYSTEM_REELFISHY_PRIVACY_THUMBS_DESC"
+					showon="privacy_screen:1"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="privacy_text"
+					type="textarea"
+					rows="3"
+					default=""
+					label="PLG_SYSTEM_REELFISHY_PRIVACY_TEXT_LABEL"
+					description="PLG_SYSTEM_REELFISHY_PRIVACY_TEXT_DESC"
+					hint="PLG_SYSTEM_REELFISHY_PRIVACY_TEXT_HINT"
+					filter="string"
+					maxlength="300"
+					showon="privacy_screen:1"
+				/>
+			</fieldset>
+			<fieldset name="seo" label="PLG_SYSTEM_REELFISHY_FIELDSET_SEO">
+				<field
+					name="structured_data"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_REELFISHY_STRUCTURED_LABEL"
+					description="PLG_SYSTEM_REELFISHY_STRUCTURED_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="editor" label="PLG_SYSTEM_REELFISHY_FIELDSET_EDITOR">
+				<field
+					name="browse_roots"
+					type="text"
+					default="images,files"
+					label="PLG_SYSTEM_REELFISHY_BROWSE_ROOTS_LABEL"
+					description="PLG_SYSTEM_REELFISHY_BROWSE_ROOTS_DESC"
+					filter="string"
+				/>
+			</fieldset>
+			<fieldset name="colors" label="PLG_SYSTEM_REELFISHY_FIELDSET_COLORS">
+				<field name="accent_1" type="color" default="#f26b1d" label="PLG_SYSTEM_REELFISHY_ACCENT_1_LABEL" filter="string" />
+				<field name="accent_2" type="color" default="#7b3fa0" label="PLG_SYSTEM_REELFISHY_ACCENT_2_LABEL" filter="string" />
+				<field name="accent_3" type="color" default="#05b5c3" label="PLG_SYSTEM_REELFISHY_ACCENT_3_LABEL" filter="string" />
+				<field name="accent_4" type="color" default="#fcd602" label="PLG_SYSTEM_REELFISHY_ACCENT_4_LABEL" filter="string" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="editors-xtd" method="upgrade">
+	<name>plg_editors-xtd_reelfishy</name>
+	<author>Chaotic Fish Design</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 Chaotic Fish Design</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>weirdideas@chaoticfishdesign.com</authorEmail>
+	<authorUrl>https://chaoticfishdesign.com</authorUrl>
+	<version>1.2.0</version>
+	<description>PLG_EDITORS_XTD_REELFISHY_XML_DESCRIPTION</description>
+	<namespace path="src">ChaoticFishDesign\Plugin\EditorsXtd\ReelFishy</namespace>
+	<files>
+		<folder plugin="reelfishy">services</folder>
+		<folder>src</folder>
+	</files>
+	<media folder="media" destination="plg_editors-xtd_reelfishy">
+		<folder>js</folder>
+	</media>
+	<languages>
+		<language tag="en-GB">language/en-GB/plg_editors-xtd_reelfishy.ini</language>
+		<language tag="en-GB">language/en-GB/plg_editors-xtd_reelfishy.sys.ini</language>
+	</languages>
+</extension>

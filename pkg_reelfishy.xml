@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="package" method="upgrade">
+	<name>Reel Fishy</name>
+	<packagename>reelfishy</packagename>
+	<author>Chaotic Fish Design</author>
+	<creationDate>2026-11</creationDate>
+	<copyright>(C) 2026 Chaotic Fish Design</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>weirdideas@chaoticfishdesign.com</authorEmail>
+	<authorUrl>https://chaoticfishdesign.com</authorUrl>
+	<packager>Chaotic Fish Design</packager>
+	<packagerurl>https://chaoticfishdesign.com</packagerurl>
+	<version>1.2.0</version>
+	<description>A self-contained, sparkly video player for Joomla 5 and 6: searchable transcripts, a mini player that docks while you scroll, and carry-over that keeps a video with visitors as they browse.</description>
+	<scriptfile>script.php</scriptfile>
+	<blockChildUninstall>true</blockChildUninstall>
+	<files folder="packages">
+		<file type="plugin" id="reelfishy" group="system">plg_system_reelfishy.zip</file>
+		<file type="plugin" id="reelfishy" group="editors-xtd">plg_editors-xtd_reelfishy.zip</file>
+	</files>
+	<updateservers>
+		<server type="collection" name="Chaotic Fish Design">https://chaoticfishdesign.com/updates/cfd.xml</server>
+	</updateservers>
+</extension>
