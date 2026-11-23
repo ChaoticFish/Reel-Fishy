@@ -17,6 +17,7 @@ What it does, in order (any failed check stops the build):
   6. Zips, into dist/:
        pkg_reelfishy-<v>.zip          the install zip
        pkg_reelfishy-<v>-source.zip   everything, including this script
+                                      (not docs/ or demo/, which live in the repo only)
      Zips are deterministic (sorted, fixed timestamps), so rebuilding the same
      source gives the same bytes and the same checksum.
   7. Update XML: when the shared generator is found (CFD_UPDATES, or the
@@ -45,7 +46,7 @@ DIST = os.path.join(ROOT, 'dist')
 UPDATE_URL = 'https://chaoticfishdesign.com/updates/cfd.xml'
 # fixed timestamp for every zip entry, so the zip only changes when a file does
 ZIP_TIME = (2026, 1, 1, 0, 0, 0)
-SKIP = {'.DS_Store', 'Thumbs.db', '__pycache__', '.git', 'dist', 'node_modules'}
+SKIP = {'.DS_Store', 'Thumbs.db', '__pycache__', '.git', '.gitignore', 'dist', 'node_modules', 'docs', 'demo'}
 
 
 def fail(msg):
